@@ -1,0 +1,18 @@
+/* Tema Oscuro: solo cambia las variables de color */
+.root {
+    -c-primario: #a78bfa;
+    -c-primario-hover: #8b5cf6;
+    -c-primario-suave: #2e2747;
+    -c-fondo: #12101a;
+    -c-superficie: #1d1a29;
+    -c-borde: #2f2b40;
+    -c-texto: #ecebf4;
+    -c-texto-suave: #a19db6;
+    -c-sidebar: #0b0a11;
+    -c-sidebar-texto: #b9b5cc;
+    -c-sidebar-activo: #7c3aed;
+    -fx-base: #262234;
+    -fx-control-inner-background: #1d1a29;
+}
+.chip { -fx-text-fill: #ddd6fe; }
+.table-row-cell:selected .table-cell { -fx-text-fill: #12101a; }

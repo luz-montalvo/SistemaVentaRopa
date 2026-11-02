@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProveedorController">
+   <children>
+      <VBox>
+         <children>
+            <Label styleClass="titulo-pantalla" text="Proveedores" />
+            <Label styleClass="subtitulo-pantalla" text="Empresas que abastecen de prendas a la tienda." />
+         </children>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox minWidth="330.0" prefWidth="340.0" spacing="6.0" styleClass="card">
+               <children>
+                  <Label fx:id="lblFormTitulo" styleClass="card-titulo" text="Nuevo proveedor" />
+                  <Label styleClass="campo-label" text="RUC" />
+                  <TextField fx:id="txtRuc" promptText="11 dígitos" />
+                  <Label styleClass="campo-label" text="RAZÓN SOCIAL" />
+                  <TextField fx:id="txtRazonSocial" />
+                  <Label styleClass="campo-label" text="CONTACTO" />
+                  <TextField fx:id="txtContacto" promptText="Persona de contacto" />
+                  <Label styleClass="campo-label" text="DIRECCIÓN" />
+                  <TextField fx:id="txtDireccion" />
+                  <Label styleClass="campo-label" text="CELULAR" />
+                  <TextField fx:id="txtCelular" promptText="9 dígitos" />
+                  <Label styleClass="campo-label" text="EMAIL" />
+                  <TextField fx:id="txtEmail" promptText="correo@empresa.com" />
+                  <Label fx:id="lblMsg" maxWidth="Infinity" styleClass="msg-error" text="" wrapText="true" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnGuardar" maxWidth="Infinity" onAction="#guardar" styleClass="btn-primario" text="Guardar" HBox.hgrow="ALWAYS" />
+                        <Button maxWidth="Infinity" onAction="#limpiar" styleClass="btn-secundario" text="Cancelar" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label styleClass="card-titulo" text="Lista de proveedores" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtFiltro" onKeyReleased="#filtrar" prefWidth="260.0" promptText="Buscar por RUC o razón social..." />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="No hay proveedores registrados" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

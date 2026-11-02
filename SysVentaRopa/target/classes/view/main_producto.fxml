@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
+   <children>
+      <VBox>
+         <children>
+            <Label styleClass="titulo-pantalla" text="Prendas" />
+            <Label styleClass="subtitulo-pantalla" text="Catálogo de ropa: costo, margen de utilidad, precio de venta y stock." />
+         </children>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <!-- Formulario -->
+            <VBox minWidth="330.0" prefWidth="340.0" spacing="6.0" styleClass="card">
+               <children>
+                  <Label fx:id="lblFormTitulo" styleClass="card-titulo" text="Nueva prenda" />
+                  <Label styleClass="campo-label" text="NOMBRE DE LA PRENDA" />
+                  <TextField fx:id="txtNombre" promptText="Ej. Casaca Jean Oversize" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="campo-label" text="COSTO (S/)" />
+                              <TextField fx:id="txtCosto" onKeyReleased="#calcularPrecioVenta" promptText="0.00" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="campo-label" text="\% UTILIDAD" />
+                              <TextField fx:id="txtUtilidad" onKeyReleased="#calcularPrecioVenta" promptText="25" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <children>
+                        <Label styleClass="dato-suave" text="Precio de venta:" />
+                        <Label fx:id="lblPrecioVenta" styleClass="chip" text="S/ 0.00" />
+                     </children>
+                     <VBox.margin><Insets bottom="4.0" top="2.0" /></VBox.margin>
+                  </HBox>
+                  <Label styleClass="campo-label" text="STOCK" />
+                  <TextField fx:id="txtStock" promptText="0" />
+                  <Label styleClass="campo-label" text="CATEGORÍA" />
+                  <ComboBox fx:id="cbxCategoria" maxWidth="Infinity" promptText="Seleccione" />
+                  <Label styleClass="campo-label" text="UNIDAD DE MEDIDA" />
+                  <ComboBox fx:id="cbxUnidadMedida" maxWidth="Infinity" promptText="Seleccione" />
+                  <Label fx:id="lbnMsg" maxWidth="Infinity" styleClass="msg-error" text="" wrapText="true" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnGuardar" maxWidth="Infinity" onAction="#validarFormulario" styleClass="btn-primario" text="Guardar" HBox.hgrow="ALWAYS" />
+                        <Button maxWidth="Infinity" onAction="#clearForm" styleClass="btn-secundario" text="Cancelar" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <!-- Lista -->
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label styleClass="card-titulo" text="Lista de prendas" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtFiltroDato" onKeyReleased="#filtrar" prefWidth="260.0" promptText="Buscar por nombre o categoría..." />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="No hay prendas registradas" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

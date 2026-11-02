@@ -1,0 +1,231 @@
+/* =====================================================================
+   SysVentaRopa - Estilo principal (tema Claro)
+   Los colores se definen una sola vez en .root; los temas Oscuro y Rosa
+   solo cambian estas variables.
+   ===================================================================== */
+.root {
+    -c-primario: #7c3aed;
+    -c-primario-hover: #6d28d9;
+    -c-primario-suave: #ede9fe;
+    -c-fondo: #f4f3f8;
+    -c-superficie: #ffffff;
+    -c-borde: #e4e2ec;
+    -c-texto: #1f1b2d;
+    -c-texto-suave: #6b6880;
+    -c-sidebar: #1c1830;
+    -c-sidebar-texto: #c9c5dc;
+    -c-sidebar-activo: #7c3aed;
+    -c-exito: #16a34a;
+    -c-peligro: #dc2626;
+
+    -fx-font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-base: #f6f5fa;
+    -fx-background: -c-fondo;
+    -fx-control-inner-background: -c-superficie;
+    -fx-accent: -c-primario;
+    -fx-focus-color: -c-primario;
+    -fx-faint-focus-color: transparent;
+}
+
+.label { -fx-text-fill: -c-texto; }
+
+/* ---------------------------- LOGIN ---------------------------- */
+.login-fondo {
+    -fx-background-color: linear-gradient(to bottom right, #2e1065, #7c3aed 55%, #db2777);
+    -fx-padding: 40;
+}
+.login-card {
+    -fx-background-color: -c-superficie;
+    -fx-background-radius: 18;
+    -fx-padding: 32 36 26 36;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 30, 0.2, 0, 8);
+}
+.login-titulo { -fx-font-size: 22px; -fx-font-weight: bold; }
+.login-sub { -fx-text-fill: -c-texto-suave; }
+.login-pie { -fx-text-fill: -c-texto-suave; -fx-font-size: 11px; }
+.login-card .text-field, .login-card .password-field { -fx-pref-height: 38; }
+
+/* ---------------------------- CAMPOS ---------------------------- */
+.text-field, .password-field, .combo-box, .date-picker {
+    -fx-background-color: -c-borde, -c-superficie;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 8, 7;
+    -fx-pref-height: 34;
+}
+.text-field:focused, .password-field:focused, .combo-box:focused, .date-picker:focused {
+    -fx-background-color: -c-primario, -c-superficie;
+    -fx-background-insets: 0, 2;
+}
+.text-field, .password-field { -fx-text-fill: -c-texto; -fx-prompt-text-fill: derive(-c-texto-suave, 30%); }
+.text-field:readonly { -fx-background-color: -c-borde, -c-fondo; }
+.campo-label { -fx-text-fill: -c-texto-suave; -fx-font-size: 12px; -fx-font-weight: bold; }
+
+/* ---------------------------- BOTONES ---------------------------- */
+.button { -fx-cursor: hand; -fx-background-radius: 8; -fx-pref-height: 34; -fx-padding: 0 16 0 16; }
+.btn-primario { -fx-background-color: -c-primario; -fx-text-fill: white; -fx-font-weight: bold; }
+.btn-primario:hover { -fx-background-color: -c-primario-hover; }
+.btn-secundario {
+    -fx-background-color: -c-borde, -c-superficie;
+    -fx-background-insets: 0, 1;
+    -fx-text-fill: -c-texto;
+}
+.btn-secundario:hover { -fx-background-color: -c-primario, -c-primario-suave; }
+.btn-exito { -fx-background-color: -c-exito; -fx-text-fill: white; -fx-font-weight: bold; }
+.btn-exito:hover { -fx-background-color: derive(-c-exito, -12%); }
+.btn-peligro { -fx-background-color: -c-peligro; -fx-text-fill: white; -fx-font-weight: bold; }
+.btn-grande { -fx-pref-height: 46; -fx-font-size: 15px; }
+.btn-icono { -fx-background-color: transparent; -fx-padding: 2 4 2 4; -fx-pref-height: 26; }
+.btn-icono:hover { -fx-background-color: -c-primario-suave; }
+
+/* ---------------------------- MENÚ LATERAL ---------------------------- */
+.sidebar {
+    -fx-background-color: -c-sidebar;
+    -fx-padding: 22 14 18 14;
+    -fx-spacing: 4;
+    -fx-pref-width: 240;
+    -fx-min-width: 240;
+}
+.sidebar .label { -fx-text-fill: -c-sidebar-texto; }
+.brand-titulo { -fx-font-size: 18px; -fx-font-weight: bold; }
+.sidebar .brand-titulo { -fx-text-fill: white; }
+.sidebar .brand-sub { -fx-font-size: 11px; }
+.sidebar .menu-seccion {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 16 10 4 10;
+    -fx-opacity: 0.6;
+}
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -c-sidebar-texto;
+    -fx-alignment: center-left;
+    -fx-pref-height: 38;
+    -fx-padding: 0 12 0 14;
+    -fx-font-size: 13.5px;
+}
+.menu-btn:hover { -fx-background-color: rgba(255,255,255,0.08); -fx-text-fill: white; }
+.menu-btn.activo { -fx-background-color: -c-sidebar-activo; -fx-text-fill: white; -fx-font-weight: bold; }
+.sidebar .combo-box > .list-cell { -fx-text-fill: white; }
+.btn-salir {
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-text-fill: white;
+    -fx-pref-height: 36;
+}
+.btn-salir:hover { -fx-background-color: -c-peligro; }
+
+/* ---------------------------- BARRA SUPERIOR ---------------------------- */
+.topbar {
+    -fx-background-color: -c-superficie;
+    -fx-border-color: transparent transparent -c-borde transparent;
+    -fx-padding: 12 24 12 24;
+    -fx-spacing: 12;
+    -fx-alignment: center-left;
+}
+.topbar-titulo { -fx-font-size: 18px; -fx-font-weight: bold; }
+.user-nombre { -fx-font-weight: bold; }
+.user-perfil { -fx-text-fill: -c-texto-suave; -fx-font-size: 11px; }
+.avatar {
+    -fx-background-color: -c-primario;
+    -fx-background-radius: 20;
+    -fx-min-width: 36; -fx-min-height: 36; -fx-max-width: 36; -fx-max-height: 36;
+    -fx-alignment: center;
+}
+.avatar .label { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px; }
+
+/* ---------------------------- CONTENIDO ---------------------------- */
+.contenido { -fx-background-color: -c-fondo; }
+.contenido > .scroll-pane, .scroll-pane, .scroll-pane > .viewport { -fx-background-color: -c-fondo; -fx-background: -c-fondo; }
+.pantalla { -fx-padding: 22 24 22 24; -fx-spacing: 16; -fx-background-color: -c-fondo; }
+.titulo-pantalla { -fx-font-size: 22px; -fx-font-weight: bold; }
+.subtitulo-pantalla { -fx-text-fill: -c-texto-suave; }
+.card {
+    -fx-background-color: -c-superficie;
+    -fx-background-radius: 14;
+    -fx-border-color: -c-borde;
+    -fx-border-radius: 14;
+    -fx-padding: 18;
+    -fx-spacing: 12;
+    -fx-effect: dropshadow(gaussian, rgba(30,20,60,0.06), 12, 0, 0, 3);
+}
+.card-titulo { -fx-font-size: 15px; -fx-font-weight: bold; }
+.msg-error { -fx-text-fill: -c-peligro; -fx-font-size: 12px; }
+.dato { -fx-font-weight: bold; }
+.dato-suave { -fx-text-fill: -c-texto-suave; }
+.chip {
+    -fx-background-color: -c-primario-suave;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12 6 12;
+    -fx-text-fill: -c-primario-hover;
+    -fx-font-weight: bold;
+}
+.bienvenida-titulo { -fx-font-size: 30px; -fx-font-weight: bold; }
+
+/* ---------------------------- TOTALES ---------------------------- */
+.total-caja {
+    -fx-background-color: -c-fondo;
+    -fx-background-radius: 10;
+    -fx-padding: 10 16 10 16;
+    -fx-spacing: 2;
+    -fx-min-width: 130;
+}
+.total-label { -fx-text-fill: -c-texto-suave; -fx-font-size: 11px; -fx-font-weight: bold; }
+.total-valor { -fx-font-size: 18px; -fx-font-weight: bold; }
+.total-caja.principal { -fx-background-color: -c-primario; }
+.total-caja.principal .label { -fx-text-fill: white; }
+.total-caja.principal .total-valor { -fx-font-size: 22px; }
+
+/* ---------------------------- TABLAS ---------------------------- */
+.table-view {
+    -fx-background-color: -c-borde, -c-superficie;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 10;
+    -fx-padding: 1;
+}
+.table-view .column-header-background { -fx-background-color: -c-fondo; -fx-background-radius: 10 10 0 0; }
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -c-borde transparent;
+    -fx-pref-height: 36;
+}
+.table-view .column-header .label { -fx-text-fill: -c-texto-suave; -fx-font-weight: bold; -fx-alignment: center-left; }
+.table-row-cell { -fx-cell-size: 36; -fx-background-color: -c-superficie; -fx-border-color: transparent transparent -c-borde transparent; }
+.table-row-cell:odd { -fx-background-color: derive(-c-superficie, -1.5%); }
+.table-row-cell:hover { -fx-background-color: -c-primario-suave; }
+.table-row-cell:selected { -fx-background-color: -c-primario; }
+.table-row-cell .table-cell { -fx-text-fill: -c-texto; -fx-padding: 0 8 0 8; -fx-alignment: center-left; }
+.table-row-cell:selected .table-cell { -fx-text-fill: white; }
+.table-view .placeholder .label { -fx-text-fill: -c-texto-suave; }
+
+/* ---------------------------- PESTAÑAS ---------------------------- */
+.tab-pane .tab-header-background { -fx-background-color: transparent; }
+.tab { -fx-background-color: transparent; -fx-padding: 6 14 6 14; }
+.tab:selected { -fx-background-color: -c-superficie; -fx-background-radius: 8 8 0 0; }
+.tab .tab-label { -fx-text-fill: -c-texto-suave; -fx-font-weight: bold; }
+.tab:selected .tab-label { -fx-text-fill: -c-primario; }
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator { -fx-border-color: transparent; }
+.date-picker > .text-field { -fx-background-color: transparent; }
+
+/* ---------------------------- DASHBOARD ---------------------------- */
+.card.kpi { -fx-spacing: 4; -fx-padding: 16 18 16 18; -fx-border-width: 1 1 1 4; }
+.kpi-titulo { -fx-text-fill: -c-texto-suave; -fx-font-size: 11px; -fx-font-weight: bold; }
+.kpi-valor { -fx-font-size: 26px; -fx-font-weight: bold; }
+.kpi-alerta { -fx-text-fill: -c-peligro; -fx-font-weight: bold; }
+.kpi-morado { -fx-border-color: -c-borde -c-borde -c-borde -c-primario; }
+.kpi-azul   { -fx-border-color: -c-borde -c-borde -c-borde #3b82f6; }
+.kpi-verde  { -fx-border-color: -c-borde -c-borde -c-borde -c-exito; }
+.kpi-ambar  { -fx-border-color: -c-borde -c-borde -c-borde #f59e0b; }
+.kpi-rojo   { -fx-border-color: -c-borde -c-borde -c-borde -c-peligro; }
+
+.dash-chart { -fx-background-color: transparent; }
+.dash-chart .chart-plot-background { -fx-background-color: transparent; }
+.dash-chart .chart-vertical-grid-lines { -fx-stroke: transparent; }
+.dash-chart .chart-horizontal-grid-lines { -fx-stroke: -c-borde; }
+.dash-chart .axis { -fx-tick-label-fill: -c-texto-suave; }
+.dash-chart .chart-legend { -fx-background-color: transparent; }
+.dash-chart .chart-legend-item { -fx-text-fill: -c-texto; }
+.dash-chart .default-color0.chart-bar { -fx-bar-fill: -c-primario; }
+
+.dash-progreso { -fx-pref-height: 8; -fx-min-height: 8; -fx-max-height: 8; }
+.dash-progreso > .track { -fx-background-color: -c-borde; -fx-background-radius: 4; -fx-background-insets: 0; }
+.dash-progreso > .bar { -fx-background-color: -c-primario; -fx-background-radius: 4; -fx-background-insets: 0; -fx-padding: 4; }

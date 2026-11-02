@@ -1,0 +1,11 @@
+/* Tema Rosa: solo cambia las variables de color */
+.root {
+    -c-primario: #db2777;
+    -c-primario-hover: #be185d;
+    -c-primario-suave: #fce7f3;
+    -c-fondo: #fdf6fa;
+    -c-borde: #f3dbe8;
+    -c-sidebar: #3b0a24;
+    -c-sidebar-texto: #f5cfe2;
+    -c-sidebar-activo: #db2777;
+}

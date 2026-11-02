@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.CatalogoController">
+   <children>
+      <VBox>
+         <children>
+            <Label styleClass="titulo-pantalla" text="Categorías y unidades de medida" />
+            <Label styleClass="subtitulo-pantalla" text="Datos que se usan para clasificar las prendas del catálogo." />
+         </children>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <!-- CATEGORÍAS -->
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="card-titulo" text="Categorías" />
+                  <Label styleClass="campo-label" text="NOMBRE DE LA CATEGORÍA" />
+                  <HBox spacing="8.0">
+                     <children>
+                        <TextField fx:id="txtCategoria" onAction="#guardarCategoria" promptText="Ej. Vestidos" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnGuardarCat" onAction="#guardarCategoria" styleClass="btn-primario" text="Guardar" />
+                        <Button onAction="#cancelarCategoria" styleClass="btn-secundario" text="Cancelar" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblMsgCat" styleClass="msg-error" text="" />
+                  <TableView fx:id="tableCategoria" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="Sin categorías" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+            <!-- UNIDADES DE MEDIDA -->
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="card-titulo" text="Unidades de medida" />
+                  <Label styleClass="campo-label" text="NOMBRE DE LA UNIDAD" />
+                  <HBox spacing="8.0">
+                     <children>
+                        <TextField fx:id="txtUnidad" onAction="#guardarUnidad" promptText="Ej. Media docena" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnGuardarUni" onAction="#guardarUnidad" styleClass="btn-primario" text="Guardar" />
+                        <Button onAction="#cancelarUnidad" styleClass="btn-secundario" text="Cancelar" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblMsgUni" styleClass="msg-error" text="" />
+                  <TableView fx:id="tableUnidad" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="Sin unidades" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

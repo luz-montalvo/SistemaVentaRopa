@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.VentaController">
+   <children>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <VBox>
+               <children>
+                  <Label styleClass="titulo-pantalla" text="Registrar venta" />
+                  <Label styleClass="subtitulo-pantalla" text="Busque al cliente, agregue las prendas y registre la venta. El IGV (18 %) se calcula solo." />
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblFecha" styleClass="chip" text="Fecha" />
+         </children>
+      </HBox>
+
+      <HBox spacing="16.0">
+         <children>
+            <!-- 1. CLIENTE -->
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="card-titulo" text="1. Cliente" />
+                  <HBox spacing="8.0">
+                     <children>
+                        <TextField fx:id="txtBuscarCliente" onAction="#buscarCliente" promptText="Escriba DNI / RUC o nombre del cliente" HBox.hgrow="ALWAYS" />
+                        <Button onAction="#buscarCliente" styleClass="btn-primario" text="Buscar" />
+                        <Button onAction="#nuevoCliente" styleClass="btn-secundario" text="+ Nuevo" />
+                     </children>
+                  </HBox>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label fx:id="lblCliNombre" styleClass="dato" text="Ningún cliente seleccionado" />
+                        <Label fx:id="lblCliDoc" styleClass="dato-suave" text="" />
+                        <Label fx:id="lblCliDireccion" styleClass="dato-suave" text="" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <!-- 2. PRENDA -->
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="card-titulo" text="2. Agregar prenda" />
+                  <TextField fx:id="txtBuscarProducto" promptText="Escriba el nombre de la prenda y elija de la lista" />
+                  <HBox alignment="BOTTOM_LEFT" spacing="12.0">
+                     <children>
+                        <VBox spacing="4.0">
+                           <children>
+                              <Label styleClass="campo-label" text="STOCK" />
+                              <Label fx:id="lblStock" styleClass="chip" text="-" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="4.0">
+                           <children>
+                              <Label styleClass="campo-label" text="PRECIO (S/)" />
+                              <Label fx:id="lblPrecio" styleClass="chip" text="-" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="campo-label" text="CANTIDAD" />
+                              <TextField fx:id="txtCantidad" onAction="#agregarPrenda" promptText="1" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnAgregar" onAction="#agregarPrenda" styleClass="btn-primario" text="Agregar" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblMsg" styleClass="msg-error" text="" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- 3. DETALLE -->
+      <VBox styleClass="card" VBox.vgrow="ALWAYS">
+         <children>
+            <Label styleClass="card-titulo" text="3. Detalle de la venta" />
+            <TableView fx:id="tableView" minHeight="180.0" VBox.vgrow="ALWAYS">
+               <placeholder><Label text="Aún no se agregaron prendas" /></placeholder>
+            </TableView>
+         </children>
+      </VBox>
+
+      <!-- TOTALES -->
+      <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="card">
+         <children>
+            <VBox styleClass="total-caja">
+               <children>
+                  <Label styleClass="total-label" text="NETO" />
+                  <Label fx:id="lblNeto" styleClass="total-valor" text="S/ 0.00" />
+               </children>
+            </VBox>
+            <VBox styleClass="total-caja">
+               <children>
+                  <Label styleClass="total-label" text="IGV (18 %)" />
+                  <Label fx:id="lblIgv" styleClass="total-valor" text="S/ 0.00" />
+               </children>
+            </VBox>
+            <VBox styleClass="total-caja,principal">
+               <children>
+                  <Label styleClass="total-label" text="TOTAL A PAGAR" />
+                  <Label fx:id="lblTotal" styleClass="total-valor" text="S/ 0.00" />
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#cancelarVenta" styleClass="btn-secundario,btn-grande" text="Cancelar" />
+            <Button fx:id="btnRegistrar" onAction="#registrarVenta" styleClass="btn-exito,btn-grande" text="Registrar venta">
+               <HBox.margin><Insets right="4.0" /></HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

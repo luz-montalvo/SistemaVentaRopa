@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="600.0" prefWidth="460.0" styleClass="login-fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.LoginController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="360.0" spacing="8.0" styleClass="login-card">
+         <children>
+            <ImageView fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/login-ropa.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="login-titulo" text="SysVentaRopa" />
+            <Label styleClass="login-sub" text="Sistema de ventas para tiendas de ropa" />
+
+            <Label maxWidth="Infinity" styleClass="campo-label" text="USUARIO">
+               <VBox.margin><Insets top="14.0" /></VBox.margin>
+            </Label>
+            <TextField fx:id="usuario" promptText="Escriba su usuario" />
+            <Label maxWidth="Infinity" styleClass="campo-label" text="CLAVE">
+               <VBox.margin><Insets top="4.0" /></VBox.margin>
+            </Label>
+            <PasswordField fx:id="clave" onAction="#login" promptText="Escriba su clave" />
+            <Label fx:id="lblError" maxWidth="Infinity" styleClass="msg-error" text="" wrapText="true" />
+
+            <Button defaultButton="true" maxWidth="Infinity" onAction="#login" styleClass="btn-primario,btn-grande" text="Ingresar">
+               <VBox.margin><Insets top="4.0" /></VBox.margin>
+            </Button>
+            <Button cancelButton="true" maxWidth="Infinity" onAction="#salir" styleClass="btn-secundario" text="Salir" />
+            <Label styleClass="login-pie" text="Tienda de Ropa · Ciclo 2026">
+               <VBox.margin><Insets top="10.0" /></VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

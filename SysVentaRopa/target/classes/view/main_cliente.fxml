@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ClienteController">
+   <children>
+      <VBox>
+         <children>
+            <Label styleClass="titulo-pantalla" text="Clientes" />
+            <Label styleClass="subtitulo-pantalla" text="Compradores minoristas (DNI) y mayoristas (RUC con representante legal)." />
+         </children>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox minWidth="330.0" prefWidth="340.0" spacing="6.0" styleClass="card">
+               <children>
+                  <Label fx:id="lblFormTitulo" styleClass="card-titulo" text="Nuevo cliente" />
+                  <Label styleClass="campo-label" text="TIPO DE DOCUMENTO" />
+                  <ComboBox fx:id="cbxTipoDoc" maxWidth="Infinity" onAction="#cambiarTipo" />
+                  <Label styleClass="campo-label" text="DNI / RUC" />
+                  <HBox spacing="8.0">
+                     <children>
+                        <TextField fx:id="txtDniruc" promptText="8 u 11 dígitos" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnReniec" onAction="#consultarReniec" styleClass="btn-secundario" text="RENIEC / SUNAT" />
+                     </children>
+                  </HBox>
+                  <Label styleClass="campo-label" text="NOMBRES / RAZÓN SOCIAL" />
+                  <TextField fx:id="txtNombres" />
+                  <Label styleClass="campo-label" text="REPRESENTANTE LEGAL (solo RUC)" />
+                  <TextField fx:id="txtRepLegal" />
+                  <Label styleClass="campo-label" text="DIRECCIÓN" />
+                  <TextField fx:id="txtDireccion" />
+                  <Label styleClass="campo-label" text="CELULAR" />
+                  <TextField fx:id="txtCelular" promptText="9 dígitos" />
+                  <Label fx:id="lblMsg" maxWidth="Infinity" styleClass="msg-error" text="" wrapText="true" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnGuardar" maxWidth="Infinity" onAction="#guardar" styleClass="btn-primario" text="Guardar" HBox.hgrow="ALWAYS" />
+                        <Button maxWidth="Infinity" onAction="#limpiar" styleClass="btn-secundario" text="Cancelar" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label styleClass="card-titulo" text="Lista de clientes" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtFiltro" onKeyReleased="#filtrar" prefWidth="260.0" promptText="Buscar por DNI/RUC o nombre..." />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="No hay clientes registrados" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

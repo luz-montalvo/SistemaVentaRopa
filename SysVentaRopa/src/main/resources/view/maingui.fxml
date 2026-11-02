@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="bp" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.MainguiController">
+   <left>
+      <!-- Menú lateral: las opciones se agregan desde el controlador según el perfil -->
+      <VBox fx:id="sidebar" styleClass="sidebar">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/login-ropa.png" />
+                     </image>
+                  </ImageView>
+                  <VBox>
+                     <children>
+                        <Label fx:id="lblApp" styleClass="brand-titulo" text="SysVentaRopa" />
+                        <Label fx:id="lblAppSub" styleClass="brand-sub" text="Tienda de ropa" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin><Insets bottom="10.0" left="6.0" /></VBox.margin>
+            </HBox>
+            <Button fx:id="btnInicio" maxWidth="Infinity" onAction="#irInicio" styleClass="menu-btn" text="Inicio" />
+            <VBox fx:id="menuBox" spacing="2.0" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Label fx:id="lblTema" styleClass="menu-seccion" text="Tema" />
+            <ComboBox fx:id="cbxTema" maxWidth="Infinity" />
+            <Label fx:id="lblIdioma" styleClass="menu-seccion" text="Idioma" />
+            <ComboBox fx:id="cbxIdioma" maxWidth="Infinity" />
+            <Button fx:id="btnSalir" maxWidth="Infinity" onAction="#cerrarSesion" styleClass="btn-salir" text="Cerrar sesión">
+               <VBox.margin><Insets top="14.0" /></VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox styleClass="topbar">
+         <children>
+            <Label fx:id="lblTitulo" styleClass="topbar-titulo" text="Inicio" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblFecha" styleClass="dato-suave" text="" />
+            <StackPane styleClass="avatar">
+               <children>
+                  <Label fx:id="lblInicial" text="U" />
+               </children>
+            </StackPane>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="lblUsuario" styleClass="user-nombre" text="Usuario" />
+                  <Label fx:id="lblPerfil" styleClass="user-perfil" text="Perfil" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <StackPane fx:id="contenido" styleClass="contenido" />
+   </center>
+</BorderPane>

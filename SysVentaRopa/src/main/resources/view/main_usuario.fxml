@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="miContenedor" styleClass="pantalla" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.UsuarioController">
+   <children>
+      <VBox>
+         <children>
+            <Label styleClass="titulo-pantalla" text="Usuarios" />
+            <Label styleClass="subtitulo-pantalla" text="Personas que pueden ingresar al sistema y su perfil de acceso." />
+         </children>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox minWidth="330.0" prefWidth="340.0" spacing="6.0" styleClass="card">
+               <children>
+                  <Label fx:id="lblFormTitulo" styleClass="card-titulo" text="Nuevo usuario" />
+                  <Label styleClass="campo-label" text="USUARIO" />
+                  <TextField fx:id="txtUsuario" promptText="Nombre para iniciar sesión" />
+                  <Label styleClass="campo-label" text="CLAVE" />
+                  <PasswordField fx:id="txtClave" promptText="Mínimo 6 caracteres" />
+                  <Label styleClass="campo-label" text="REPETIR CLAVE" />
+                  <PasswordField fx:id="txtClave2" />
+                  <Label styleClass="campo-label" text="PERFIL" />
+                  <ComboBox fx:id="cbxPerfil" maxWidth="Infinity" promptText="Seleccione" />
+                  <Label fx:id="lblMsg" maxWidth="Infinity" styleClass="msg-error" text="" wrapText="true" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnGuardar" maxWidth="Infinity" onAction="#guardar" styleClass="btn-primario" text="Guardar" HBox.hgrow="ALWAYS" />
+                        <Button maxWidth="Infinity" onAction="#limpiar" styleClass="btn-secundario" text="Cancelar" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox styleClass="card" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label styleClass="card-titulo" text="Lista de usuarios" />
+                  <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                     <placeholder><Label text="No hay usuarios" /></placeholder>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
