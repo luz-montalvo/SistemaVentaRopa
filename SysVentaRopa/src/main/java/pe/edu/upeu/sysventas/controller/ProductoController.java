@@ -51,6 +51,16 @@ public class ProductoController {
         columns.put("Stock", new ColumnInfo("stock", 60.0));
         new TableViewHelper<Producto>().addColumnsInOrderWithSize(tableView, columns, this::editForm, this::eliminar);
 
+        tableView.setRowFactory(tv -> new TableRow<>() {
+            @Override
+            protected void updateItem(Producto p, boolean empty) {
+                super.updateItem(p, empty);
+                getStyleClass().removeAll("stock-alto", "stock-bajo");
+                if (!empty && p != null && p.getStock() != null) {
+                    getStyleClass().add(p.getStock() > 20 ? "stock-alto" : "stock-bajo");
+                }
+            }
+        });
         clearForm();
         listar();
     }

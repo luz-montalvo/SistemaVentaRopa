@@ -229,3 +229,8 @@
 .dash-progreso { -fx-pref-height: 8; -fx-min-height: 8; -fx-max-height: 8; }
 .dash-progreso > .track { -fx-background-color: -c-borde; -fx-background-radius: 4; -fx-background-insets: 0; }
 .dash-progreso > .bar { -fx-background-color: -c-primario; -fx-background-radius: 4; -fx-background-insets: 0; -fx-padding: 4; }
+
+.table-row-cell.stock-alto { -fx-background-color: rgba(22,163,74,0.15); }
+.table-row-cell.stock-bajo { -fx-background-color: rgba(255, 255, 0, 0.15); }
+.table-row-cell.stock-alto:hover, .table-row-cell.stock-bajo:hover { -fx-background-color: -c-primario-suave; }
+.table-row-cell.stock-alto:selected, .table-row-cell.stock-bajo:selected { -fx-background-color: -c-primario; }

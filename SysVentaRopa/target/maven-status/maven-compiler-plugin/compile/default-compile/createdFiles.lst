@@ -79,6 +79,7 @@ pe\edu\upeu\sysventas\config\DatabaseConfig.class
 pe\edu\upeu\sysventas\model\Categoria.class
 pe\edu\upeu\sysventas\service\impl\DashboardServiceImp.class
 pe\edu\upeu\sysventas\repository\DetalleCompraRepository.class
+pe\edu\upeu\sysventas\controller\ProductoController$1.class
 pe\edu\upeu\sysventas\model\Venta$VentaBuilderImpl.class
 pe\edu\upeu\sysventas\model\Compra$CompraBuilder.class
 pe\edu\upeu\sysventas\components\ComboBoxAutoComplete.class
